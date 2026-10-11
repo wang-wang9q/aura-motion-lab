@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10110e">
+  <meta name="description" content="AURA / FREQUENCY — 一场关于声音、形态与自由的互动实验。">
+  <title>AURA / FREQUENCY — 声音的下一维</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/manrope.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/speaker.png" as="image">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="audio.js"></script>
+  <script defer src="field.js"></script>
+  <script defer src="flux.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到内容</a>
+  <div class="intro-shutter" aria-hidden="true"><div></div><div></div><span>AURA<span class="intro-slash"> / </span>FREQUENCY</span></div>
+  <div class="cursor" aria-hidden="true"><span>EXPLORE</span></div>
+  <div class="scroll-progress" aria-hidden="true"><i></i></div>
+  <header class="header">
+    <a class="logo" href="#top" aria-label="AURA 首页">AURA<span class="logo-star" aria-hidden="true">✳</span></a>
+    <nav class="nav" aria-label="主要导航"><a href="#object"><span>01</span> 形态</a><a href="#lab"><span>02</span> 声场</a><a href="#world"><span>03</span> 自由</a></nav>
+    <div class="header-controls"><button class="motion-toggle" id="motion-toggle" aria-pressed="false" aria-label="开启轻动态模式"><span aria-hidden="true">◉</span><span class="motion-label">FULL MOTION</span></button><button class="sound-toggle" data-play aria-pressed="false" aria-label="开启声音"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="sound-label">SOUND OFF</span></button></div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <canvas id="flux" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-meta"><span>THE PORTABLE SOUND EXPERIMENT</span><span>EST. 2026 &nbsp; / &nbsp; VOL. 02</span></div>
+      <h1 class="hero-title" id="hero-title"><span class="hero-line"><span data-split>SOUND</span><i class="title-asterisk" aria-hidden="true">✳</i></span><span class="hero-line outline" data-split>BEYOND.</span><span class="sr-only">AURA 声音的下一维</span></h1>
+      <div class="hero-orbits" aria-hidden="true"><div class="orbit orbit-a"><i></i></div><div class="orbit orbit-b"><i></i></div><div class="orbit orbit-c"></div></div>
+      <div class="hero-product-wrap"><div class="hero-product-float"><img class="hero-product" src="assets/speaker.png" width="1842" height="854" alt="悬浮于光轨间的 AURA 苔绿色便携音箱"></div><span class="product-index">AURA / 01 <i></i> MOSS EDITION</span></div>
+      <span class="hero-coordinate coordinate-left" aria-hidden="true">+ 360°<br>IMMERSIVE FIELD</span><span class="hero-coordinate coordinate-right" aria-hidden="true">FORM / 01<br>FREEDOM / ∞ +</span>
+      <div class="hero-footer"><p>把声音，推向下一维。<br><span>一只音箱。一场感官出逃。</span></p><a class="hero-enter magnetic" href="#lab"><span class="arrow-disc" aria-hidden="true">↗</span><span>进入声场<span class="micro">ENTER THE FREQUENCY</span></span></a><a class="scroll-hint" href="#manifesto"><span>SCROLL TO UNFOLD</span><i aria-hidden="true">↓</i></a></div>
+    </section>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>BREAK THE SILENCE</span><i>✳</i><span>FEEL THE FREQUENCY</span><i>✳</i><span>BREAK THE SILENCE</span><i>✳</i><span>FEEL THE FREQUENCY</span><i>✳</i></div></div>
+    <section class="manifesto section-pad" id="manifesto" aria-labelledby="manifesto-title">
+      <div class="section-meta"><span>01 — A NEW KIND OF PRESENCE</span><span>声音，是看不见的引力。</span></div>
+      <div class="manifesto-layout"><h2 id="manifesto-title" class="manifesto-title">不止听见。<br>让每一个<br><span class="fill-text">音符成形。</span></h2><div class="manifesto-right"><div class="orbital-art" aria-hidden="true"><i class="orbital-plane plane-a"></i><i class="orbital-plane plane-b"></i><i class="orbital-plane plane-c"></i><span class="orbital-core">a.</span><span class="orbital-mark">SOUND HAS NO EDGES</span></div><p class="reveal">声音穿过空气，也穿过日常。<br>我们把它想象成一道光、一圈涟漪，<br>一种不被空间定义的自由。</p><span class="micro">SMALL OBJECT. LIMITLESS POSSIBILITIES.</span></div></div>
+    </section>
+    <section class="object-section" id="object" aria-labelledby="object-title">
+      <div class="object-stage">
+        <div class="section-meta stage-meta"><span>02 — ANATOMY OF AURA</span><span>向下滚动，展开声音。</span></div>
+        <div class="object-outline" aria-hidden="true">360<span>°</span></div>
+        <div class="object-model">
+          <div class="object-halo" aria-hidden="true"></div>
+          <svg class="blueprint" viewBox="0 0 1000 600" fill="none" aria-hidden="true">
+            <defs><pattern id="mesh" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.5" fill="currentColor"/></pattern></defs>
+            <g class="blueprint-shell"><rect x="120" y="155" width="700" height="290" rx="145" stroke="currentColor"/><rect x="135" y="170" width="670" height="260" rx="130" fill="url(#mesh)" stroke="currentColor"/><path d="M210 110H730M210 485H730M95 155V445M845 155V445" stroke="currentColor" stroke-dasharray="4 8"/></g>
+            <g class="driver driver-one"><circle cx="335" cy="300" r="115" stroke="currentColor"/><circle cx="335" cy="300" r="86" stroke="currentColor"/><circle cx="335" cy="300" r="48" stroke="currentColor"/><circle cx="335" cy="300" r="22" fill="currentColor" fill-opacity=".2"/><path d="M220 300H450M335 185V415" stroke="currentColor" stroke-dasharray="3 6"/></g>
+            <g class="driver driver-two"><circle cx="605" cy="300" r="115" stroke="currentColor"/><circle cx="605" cy="300" r="86" stroke="currentColor"/><circle cx="605" cy="300" r="48" stroke="currentColor"/><circle cx="605" cy="300" r="22" fill="currentColor" fill-opacity=".2"/></g>
+            <g class="blueprint-lines"><path d="M335 185V70H500M605 415V540H790M820 300H940" stroke="currentColor"/><circle cx="335" cy="185" r="5" fill="currentColor"/><circle cx="605" cy="415" r="5" fill="currentColor"/></g>
+          </svg>
+          <div class="object-image-float"><img class="object-image" src="assets/speaker.png" width="1842" height="854" alt="AURA 音箱的织物机身与实体按键" loading="lazy"></div>
+          <span class="model-caption micro">声学结构概念演绎 / CONCEPT VISUALIZATION</span>
+        </div>
+        <div class="object-copy">
+          <article class="object-chapter chapter-0"><span class="chapter-index">01 / SOUND</span><h2 id="object-title">小身体。<br><em>大声场。</em></h2><p>让旋律越过边界。<br>围绕你的，是整个现场。</p><div class="object-spec"><strong>360<span>°</span></strong><span>环绕声场<br>概念设计目标</span></div></article>
+          <article class="object-chapter chapter-1"><span class="chapter-index">02 / TOUCH</span><h2>每一处细节，<br><em>都有回响。</em></h2><p>织物肌理、穿孔格栅、实体按键。<br>音乐开始之前，手感已经抵达。</p><div class="object-spec"><strong>01<span>↗</span></strong><span>纯粹的形态<br>直觉的交互</span></div></article>
+          <article class="object-chapter chapter-2"><span class="chapter-index">03 / GO</span><h2>带上声音。<br><em>把世界放大。</em></h2><p>挂上手绳，走出门。<br>从日出到深夜，下一站由你决定。</p><div class="object-spec"><strong>24<span>h</span></strong><span>随行续航<br>概念设计目标</span></div></article>
+        </div>
+        <div class="chapter-progress" aria-hidden="true"><span class="chapter-current">01</span><div><i></i></div><span>03</span></div>
+      </div>
+    </section>
+    <section class="lab section-pad" id="lab" aria-labelledby="lab-title">
+      <div class="section-meta"><span>03 — FREQUENCY PLAYGROUND</span><span class="live-status"><i></i> LIVE INTERACTION</span></div>
+      <div class="lab-heading"><h2 id="lab-title" class="reveal">让声音<br><em>看得见。</em></h2><div><p class="reveal">播放一段声景，看粒子随频率呼吸。<br>移动指尖，扰动引力；轻触舞台，释放脉冲。</p><span class="micro">MOVE. TOUCH. LISTEN.</span></div></div>
+      <div class="field-stage" id="field-stage" role="button" tabindex="0" aria-label="互动粒子舞台，点击或按空格释放脉冲，拖动改变视角">
+        <div class="field-grid" aria-hidden="true"></div><canvas id="field" aria-hidden="true"></canvas>
+        <div class="field-topline"><span id="field-name">01 / ORBITAL SPHERE</span><span class="field-readout" aria-hidden="true">ENERGY <b id="energy-value">000</b></span></div>
+        <span class="field-watermark" aria-hidden="true">aura.</span>
+        <span class="field-corner corner-tl" aria-hidden="true"></span><span class="field-corner corner-tr" aria-hidden="true"></span><span class="field-corner corner-bl" aria-hidden="true"></span><span class="field-corner corner-br" aria-hidden="true"></span>
+        <div class="field-bottomline"><span id="pulse-status" aria-live="polite">触碰，打破平静。</span><span class="micro">DRAG TO ROTATE &nbsp; · &nbsp; TAP TO PULSE</span></div>
+      </div>
+      <div class="lab-console">
+        <div class="mode-tabs" role="group" aria-label="粒子形态"><button class="active" data-mode="sphere" aria-pressed="true"><span>01</span> 球体<span class="mode-en">SPHERE</span></button><button data-mode="torus" aria-pressed="false"><span>02</span> 光环<span class="mode-en">TORUS</span></button><button data-mode="wave" aria-pressed="false"><span>03</span> 波浪<span class="mode-en">WAVE</span></button></div>
+        <button class="lab-play magnetic" data-play aria-pressed="false"><span class="play-glyph" aria-hidden="true">▶</span><span class="play-label">开启声音</span></button>
+        <label class="lab-volume"><span>VOLUME</span><input type="range" id="volume" min="0" max="100" value="35" aria-label="声音音量"><output id="volume-value">35</output></label>
+      </div>
+      <div class="scene-selector"><span class="micro">SOUNDSCAPE</span><button class="active" data-scene="studio" aria-pressed="true">慢下来 <span>AMBIENT</span></button><button data-scene="outdoor" aria-pressed="false">去野外 <span>DAYLIGHT</span></button><button data-scene="night" aria-pressed="false">入夜后 <span>AFTER HOURS</span></button><p id="audio-status" role="status">原创合成声景 · 建议佩戴耳机</p></div>
+    </section>
+    <section class="world" id="world" aria-labelledby="world-title">
+      <div class="world-pin"><div class="world-image"><img src="assets/lifestyle.png" width="1672" height="941" alt="森林湖畔岩石上的 AURA 音箱" loading="lazy"></div><div class="world-shade"></div><div class="world-meta micro">04 — YOUR WORLD. YOUR FREQUENCY.</div><h2 id="world-title"><span>OUT OF</span><span class="world-outline">THE ORDINARY.</span></h2><div class="world-bottom"><p>把日常留在身后。<br>把喜欢的声音，带去喜欢的地方。</p><span class="world-rotation" aria-hidden="true">↗</span><span class="micro">NO WIRES.<br>NO BOUNDARIES.</span></div></div>
+    </section>
+    <section class="edition section-pad" id="edition" aria-labelledby="edition-title">
+      <div class="section-meta"><span>05 — YOUR SIGNATURE</span><span>颜色，也是你的频率。</span></div>
+      <div class="edition-heading"><h2 id="edition-title" class="reveal">找到你的<br><em>那一种。</em></h2><p>同一种自由，三种表达。<br>点击切换，让整个空间回应你。</p></div>
+      <div class="edition-stage"><span class="edition-word" id="edition-word" aria-hidden="true">MOSS</span><div class="edition-orbit" aria-hidden="true"></div><img id="edition-product" src="assets/speaker.png" width="1842" height="854" alt="苔绿色 AURA 音箱" loading="lazy"><span class="edition-marker micro">AURA / 01<br>COLOR STUDY — 2026</span></div>
+      <div class="edition-controls"><div class="color-tabs" role="group" aria-label="选择音箱颜色"><button class="active" data-color="moss" aria-pressed="true"><i class="moss"></i><span>苔绿<small>01 / MOSS</small></span></button><button data-color="sand" aria-pressed="false"><i class="sand"></i><span>砂岩<small>02 / SAND</small></span></button><button data-color="graphite" aria-pressed="false"><i class="graphite"></i><span>石墨<small>03 / GRAPHITE</small></span></button></div><button class="download-button magnetic" id="download"><span>收藏这一频率</span><span aria-hidden="true">↓</span></button></div><p class="download-status micro" id="download-status" role="status">下载专属 AURA 视觉卡片</p>
+    </section>
+    <section class="finale" aria-labelledby="finale-title"><div class="finale-rings" aria-hidden="true"><i></i><i></i><i></i></div><span class="micro">THE WORLD IS YOUR SOUNDSTAGE.</span><h2 id="finale-title"><span data-split>STAY</span><br><span data-split>UNBOUND.</span></h2><a class="finale-link magnetic" href="#top"><span>再感受一次</span><span aria-hidden="true">↗</span></a><div class="finale-bottom"><span>AURA / FREQUENCY</span><span>声音，自由发生。</span></div></section>
+  </main>
+  <footer><a class="footer-logo" href="#top">AURA ✳</a><p>独立产品设计概念 · 音箱图像为 AI 创作，参数为设计目标。<br>结构动画与声景为艺术演绎，不代表实际产品性能。</p><a href="https://wang-wang9q.github.io/aura-sound-unbound/" target="_blank" rel="noopener">原版 AURA <span aria-hidden="true">↗</span></a><span class="micro">© 2026 AURA CONCEPT</span></footer>
+  <noscript><div class="noscript">动态体验需要 JavaScript。你仍可浏览产品与全部内容。</div></noscript>
+</body>
+</html>
